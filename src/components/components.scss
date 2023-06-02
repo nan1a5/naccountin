@@ -1,0 +1,78 @@
+@import "../theme.scss";
+
+// Header Start
+.Header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: inherit;
+    padding: 25px 18px;
+    box-sizing: border-box;
+
+    &>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: inherit;
+    }
+
+    .left_bx {
+        flex: .5;
+        height: 100%;
+    }
+    .middle_bx {
+        flex: 1.5;
+        height: 100%;
+    }
+    .right_bx {
+        flex: .5;
+        height: 100%;
+
+        .user_bx {
+            width: 80%;
+            min-width: 100px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            cursor: pointer;
+
+            .user_avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #66CCCC;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+// Header End
+
+// SideBar Start
+.SideBar {
+    width: 15vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+}
+// SideBar End
+
+// Content Start
+.Content {
+    width: 85vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+}
+// Content End
