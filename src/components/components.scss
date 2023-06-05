@@ -1,7 +1,11 @@
-@import "../theme.scss";
+@import "../public.scss";
 
 // Header Start
 .Header {
+    // 吸顶
+    position: sticky;
+    top: 0;
+    z-index: 100;
     width: 100%;
     height: 8vh;
     max-height: 90px;
@@ -12,6 +16,12 @@
     padding: 25px 18px;
     box-sizing: border-box;
     box-shadow: 0px 0px 5px rgba(182, 182, 182, 0.25);
+    @include respond('mobile') {
+        height: 8vh;
+        padding: 15px 10px;
+        font-size: 1rem;
+        // justify-content: space-evenly;
+    }
 
     &>div {
         display: flex;
@@ -23,6 +33,10 @@
     .left_bx {
         flex: .5;
         height: 100%;
+        @include respond('phone') {
+            // flex: .2;
+            justify-content: left;
+        }
 
         .title {
             font-family: 'Roboto', sans-serif, Arial;
@@ -43,6 +57,10 @@
     .middle_bx {
         flex: 1.5;
         height: 100%;
+        @include respond('phone') {
+            // flex: .2;
+            display: none;
+        }
 
         .search_bx {
             width: 100%;
@@ -65,6 +83,19 @@
                 border-radius: 0 5px 5px 0px;
                 border: none;
                 cursor: pointer;
+                @include respond('phone') {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: none;
+                    .search_text {
+                        display: none;
+                    }
+                    .icon-search {
+                        font-size: 1.5rem;
+                        color: #99CC33;
+                    }
+                }
             }
 
             .search_input {
@@ -76,6 +107,12 @@
                 background: #fff;
                 border-radius: 5px 0px 0px 5px;
                 cursor: pointer;
+                @include respond('phone') {
+                    font-size: 1rem;
+                    width: 0;
+                    margin-right: -1rem;
+                    display: none;
+                }
 
                 input {
                     width: 100%;
@@ -114,6 +151,10 @@
                 background: #99CC33;
                 margin-right: 10px;
                 cursor: pointer;
+                &:hover {
+                    // 添加滤镜
+                    filter: brightness(1.1);
+                }
             }
         }
     }
@@ -122,6 +163,7 @@
 
 // SideBar Start
 .SideBar {
+    // z-index: 100;
     width: 15vw;
     max-width: 250px;
     height: 100%;
@@ -133,6 +175,17 @@
     padding: 25px 22px;
     box-sizing: border-box;
     box-shadow: 0px 4px 5px rgba(182, 182, 182, 0.25);
+    @include respond('mobile') {
+        display: none;
+        &.actived {
+            position: fixed;
+            width: 100vw;
+            max-width: 100vw;
+            height: 70vh;
+            border-radius: 0 0 1rem 1rem;
+            background: #4e4e4ee3;
+        }
+    }
 
     .nav_list {
         flex: 1;
@@ -150,7 +203,24 @@
             box-sizing: border-box;
             display: flex;
             align-items: center;
+            justify-content: center;
 
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #99CC33;
+                font-family: 'Roboto', sans-serif, Arial;
+                font-size: 16px;
+                // font-weight: 600;
+                @include respond('mobile') {
+                    justify-content: center;
+                    color: #fff;
+                    font-size: 1.5rem;
+                }
+            }
             .icon {
                 margin-right: 1em;
             }
@@ -167,6 +237,9 @@
         padding: 1em;
         box-sizing: border-box;
         border-top: 1px solid #d1d1d1 ;
+        @include respond('mobile') {
+            flex: .8;
+        }
 
         .info_item {
             width: 100%;
@@ -182,6 +255,12 @@
             font-weight: 600;
             color: #993366;
             cursor: pointer;
+            @include respond('mobile') {
+                justify-content: center;
+                color: #CCCCFF;
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
 
             .icon {
                 margin-right: 1em;
@@ -193,12 +272,18 @@
 
 // Content Start
 .Content {
-    width: 85vw;
+    width: 85%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: inherit;
+    @include respond('phone') {
+        width: 100%;
+    }
+    @include respond('pad') {
+        width: 95%;
+    }
 }
 // Content End

@@ -10,6 +10,7 @@
     width: 100vw;
     height: 100vh;
     background: #99999980;
+    z-index: 1000;
     .modal_content {
         min-width: 20em;
         background: #fff;
@@ -28,10 +29,26 @@
             width: 100%;
             padding: .5rem 1rem;
             box-sizing: border-box;
+            .close:hover {
+                animation: rotate .3s linear 1;
+            }
         }
         .modal_content {
             margin-bottom: 1rem;
             width: 100%;
         }
+    }
+}
+
+// 旋转半圈的动画
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(90deg);
     }
 }

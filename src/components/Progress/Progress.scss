@@ -1,0 +1,26 @@
+.Progress {
+    height: 1.4rem;
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .progress_bx {
+        flex:1;
+        height: 100%;
+        border-radius: .5rem;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        background-color: #99CC6660;
+        .progress {
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #99CC33;
+        }
+    }
+}

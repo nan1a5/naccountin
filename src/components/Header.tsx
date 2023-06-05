@@ -12,7 +12,7 @@ const Header: React.FC = () => {
                     <div className="search_input">
                         <input type="text" placeholder="Search" />
                     </div>
-                    <button type="submit" className="search_icon"><span className="icon-search" />Search</button>
+                    <button type="submit" className="search_icon"><span className="icon-search" /><span className="search_text">Search</span></button>
                 </form>
             </div>
             <div className="right_bx">
