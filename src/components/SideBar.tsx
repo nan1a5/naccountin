@@ -19,6 +19,11 @@ const SideBar: React.FC = () => {
             name: "愿望单",
             link: "/",
             icon: ""
+        },
+        {
+            name: "记事本",
+            link: "/",
+            icon: ""
         }
     ];
 

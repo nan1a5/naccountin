@@ -1,0 +1,80 @@
+@import '../../public.scss';
+
+.Book {
+    position: relative;
+    height: 11rem;
+    min-width: 8.5rem;
+    border-radius: 3px .5rem .5rem 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    // color: #fff;
+    // background: #39c5bb;
+    transition: all .3s;
+    perspective: 1000px;
+    cursor: pointer;
+    @include respond('phone') {
+        height: 8.5rem;
+        width: 30%;
+        min-width: 3.5rem;
+        max-width: 7rem;
+        font-size: 1rem;
+    }
+    @include respond('pad') {
+        height: 10.5rem;
+        width: 30%;
+        min-width: 4rem;
+        max-width: 8rem;
+        font-size: 1rem;
+    }
+
+    &:hover {
+        transform: scale(0.85) rotate(-8deg);
+        box-shadow: 0 0 1rem rgba(0,0,0,.2);
+        
+        .cover {
+            transform: rotateY(-35deg);
+        }
+        .first_page {
+            transform: rotateY(-25deg);
+            background: #fff6c3ea;
+            z-index: 4;
+        }
+    }
+
+    .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        z-index: 5;
+        background: #ffbebe;
+        border-radius: 3px .5rem .5rem 3px;
+        transform-origin: left center 0; 
+        transition: all .5s;
+    }
+    .last_page, .first_page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px .5rem .5rem 3px;
+        background: #ffbebe;
+        transform-origin: left center 0; 
+        transition: all .6s;
+    }
+}
