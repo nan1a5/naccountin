@@ -1,0 +1,58 @@
+$bg-primary: #666699;
+$bg-app-primary: #FFFFFF;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == 'phone' {
+    @media (min-width: 0px) and (max-width: 544px) {
+      @content;
+    }
+  } @else if $breakpoint == 'pad' {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == 'mobile' {
+    @media (min-width: 0px) and (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == 'laptop' {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: 1201px) and (max-width: 1380px) {
+      @content;
+    }
+  } @else if $breakpoint == 'bigscreen' {
+    @media (min-width: 1381px) {
+      @content;
+    }
+  }
+}
+
+@mixin container($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+
+@mixin flex-container($direction, $justify: flex-start, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @content;
+}
+@mixin flex-container-center-start($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: flex-start;
+  align-items: center;
+  @content;
+}
+@mixin flex-container-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  @content;
+}

@@ -3,12 +3,17 @@ import './components.scss'
 
 // import WishList from "./Views/WishList/WishList";
 import AccountBook from "./Views/AccountBook/AccountBook";
+interface Props {
+    children?: React.ReactNode;
+}
 
-const Content: React.FC = () => {
+const Content: React.FC<Props> = ({children}) => {
     return (
-        <div className="Content">
-            <AccountBook />
-        </div>
+        <section className="Content">
+            {
+                children
+            }
+        </section>
     );
 }
 

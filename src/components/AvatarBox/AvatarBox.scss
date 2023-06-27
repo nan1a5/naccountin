@@ -1,0 +1,86 @@
+@import '../../mixin.scss';
+
+.AvatarBox {
+    @include container(80%, 40px);
+    @include flex-container-center(row);
+    margin-left: 10px;
+    cursor: pointer;
+    position: relative;
+    @include respond('mobile') {
+        justify-content: end;
+    }
+    &:hover {
+        .avatar {
+            position: absolute;
+            top: .5rem;
+            left: 40%;
+            transform-origin: center center;
+            transform: scale(1.4) translateY(calc(50% - 20px));
+            z-index: 2;
+            @include respond('mobile') {
+                transform: scale(1.2) translateY(calc(50% - 20px));
+            }
+        }
+        .username {
+            opacity: 0;
+        }
+        .info_bx {
+            width: 100%;
+            @include flex-container-center(column);
+            gap: .2rem;
+            position: absolute;
+            top: 70%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: .5rem;
+            padding: 1.5rem 1rem;
+            padding-top: 3rem;
+            z-index: 1;
+            @include respond('mobile') {
+                padding-top: 2rem;
+            }
+        }
+    }
+
+    .username {
+        transition: all .1s;
+    }
+    .avatar {
+        @include container(40px, 40px);
+        border-radius: 50%;
+        background: #99CC33;
+        margin-left: 10px;
+        transition: all .3s;
+        cursor: pointer;
+        &:hover {
+            filter: brightness(1.1);
+        }
+        @include respond('phone') {
+            @include container(32px, 32px);
+            margin-right: 5px;
+        }
+    }
+    .info_bx {
+        display: none;
+
+        .bx_btn {
+            @include container(100%, 2rem);
+            @include flex-container-center(row);
+            color: #353535;
+            overflow: hidden;
+            &:hover {
+                background-color: #eeeeee50;
+                color: #99CC33;
+            }
+
+            span {
+                vertical-align: middle;
+            }
+            img {
+                height: 1.2rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}

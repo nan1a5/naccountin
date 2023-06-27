@@ -1,0 +1,236 @@
+@import '../../../../mixin.scss';
+.AccountBookDetail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    @include respond('phone') {
+        padding: .5rem 1rem;
+    }
+    @include respond('pad') {
+        padding: 1rem 1rem;
+    }
+
+    .detail-title {
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        @include respond('phone') {
+            margin: 0;
+            height: 1.5rem;
+            font-size: 1.1rem;
+        }
+        @include respond('pad') {
+            margin-bottom: .5rem;
+            height: 2rem;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .detail-main {
+        width: 100%;
+        padding: 1rem 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        @include respond('phone') {
+            padding: .5rem 0;
+            gap: .5rem;
+        }
+
+        .detail-header {
+            width: 100%;
+            // height: 12rem;
+            min-height: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem .5rem;
+            box-sizing: border-box;
+            // margin-bottom: 1rem;
+            // background: #f5f5f5;
+            @include respond('phone') {
+                // height: 10rem;
+                padding: .5rem 0;
+                flex-direction: column;
+                gap: .5rem;
+            }
+
+            .detail-chart {
+                flex: 3;
+                height: 11rem;
+                font-weight: bold;
+                border-radius: 1rem;
+                background: #ffffff;
+                box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.1);
+                border: 1px solid #eeeeee;
+                @include respond('phone') {
+                    height: 8.5rem;
+                    width: 100%;
+                    flex: none;
+                }
+            }
+            // .detail-total {
+            //     flex: 2;
+            //     height: 11rem;
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: center;
+            //     justify-content: center;
+            //     font-size: 1.5rem;
+            //     font-weight: bold;
+            //     border-radius: 1rem;
+            //     background: #ff6b6b;
+            //     @include respond('phone') {
+            //         height: 5rem;
+            //         width: 95%;
+            //         flex: none;
+            //     }
+            // }
+        }
+        .detail-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            // padding: .5rem 0;
+            // box-sizing: border-box;      
+            border-radius: 1rem;
+            // background: #fff;
+            // box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.1);
+            // border: 1px solid #eeeeee;
+
+            &>div {
+                width: 100%;
+                // height: 10rem;
+                // padding: .5rem .5rem;
+                // box-sizing: border-box;
+                border: 1px solid #eeeeee;
+                border-radius: 1rem;
+                background: #fff;
+                box-shadow: 1px 2px 1.5px rgba(0, 0, 0, 0.1);
+                &.out {
+                    .paymethod {
+                        // width: 2.5rem;
+                        height: 1.1rem;
+                        border-radius: 1rem;
+                        padding: 0 .3rem;
+                        box-sizing: border-box;
+                        color: #ff6b6b;
+                        border: 1px solid #ff6b6b;
+                        margin-right: .5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: .9rem;
+
+                        &.alipay {
+                            color: #00a8ff;
+                            border: 1px solid #00a8ff;
+                        }
+                        &.wxpay {
+                            color: #00b894;
+                            border: 1px solid #00b894;
+                        }
+                        &.card {
+                            color: #ff7675;
+                            border: 1px solid #ff7675;
+                        }
+                        &.cash {
+                            color: #fdcb6e;
+                            border: 1px solid #fdcb6e;
+                        }
+                    }
+                }
+                &.in {
+                    .incometype {
+                        // width: 2.5rem;
+                        height: 1.1rem;
+                        border-radius: 1rem;
+                        padding: 0 .3rem;
+                        box-sizing: border-box;
+                        color: #ff6b6b;
+                        border: 1px solid #ff6b6b;
+                        margin-right: .5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: .9rem;
+                    }
+                }
+
+                &>div {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: .5rem .5rem;
+                    box-sizing: border-box;
+                    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+                    border-radius: 1rem 1rem 0 0;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        &:last-child {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                ul {
+                    width: 100%;
+                    max-height: 8.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    // justify-content: center;
+                    padding: .5rem 1rem;
+                    box-sizing: border-box;
+                    overflow-y: scroll;
+                    gap: .2rem;
+                    li {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: .5rem 0;
+                        box-sizing: border-box;
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+    
+                        .left {
+    
+                        }
+                        .right {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

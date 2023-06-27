@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal.scss'
+import IconCross from '../../images/cross.svg';
 
 interface ModalProps {
     title: string;
@@ -16,7 +17,7 @@ const Modal: React.FC<ModalProps> = (props) => {
             <div className="modal_content">
                 <div className="modal_header">
                     <span className="title">{title}</span>
-                    <span className="close icon-cross" onClick={() => {onClose()}}></span>
+                    <img alt='' src={IconCross} className="close icon-cross" onClick={() => {onClose()}} />
                 </div>
                 <div className="modal_content">
                     {content}

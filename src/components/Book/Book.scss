@@ -1,10 +1,10 @@
-@import '../../public.scss';
+@import '../../mixin.scss';
 
 .Book {
     position: relative;
-    height: 11rem;
-    min-width: 8.5rem;
-    border-radius: 3px .5rem .5rem 3px;
+    height: calc(7 * 1.4rem);
+    min-width: 7rem;
+    border-radius: 3px .8rem .8rem 3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,19 +13,19 @@
     font-weight: 600;
     // color: #fff;
     // background: #39c5bb;
-    transition: all .3s;
+    transition: all .2s;
     perspective: 1000px;
     cursor: pointer;
     @include respond('phone') {
-        height: 8.5rem;
-        width: 30%;
-        min-width: 3.5rem;
-        max-width: 7rem;
+        height: calc(6.2 * 1.4rem);
+        width: 6.2rem;
+        min-width: 4.5rem;
+        // max-width: 7rem;
         font-size: 1rem;
     }
     @include respond('pad') {
-        height: 10.5rem;
-        width: 30%;
+        height: calc(6.5 * 1.4rem);
+        width: 6.5rem;
         min-width: 4rem;
         max-width: 8rem;
         font-size: 1rem;
@@ -39,9 +39,50 @@
             transform: rotateY(-35deg);
         }
         .first_page {
-            transform: rotateY(-25deg);
-            background: #fff6c3ea;
+            transform: rotateY(-30deg);
+            background: #fff6c3;
             z-index: 4;
+            border: 1px solid #c9c978;
+        }
+        .second_page {
+            transform: rotateY(-20deg);
+            background: #fff6c3;
+            border: 1px solid #c9c978;
+            z-index: 3;
+        }
+        
+    }
+
+    &.open {
+        position: absolute;
+        top: 40vh;
+        left: 56vw;
+        transition: all 1.3s ease-in-out;
+        transform: scale(2.9) rotate(0deg);
+        box-shadow: 0 0 1rem rgba(0,0,0,.2);
+        transform-origin: center center 0;
+        z-index: 45;
+        .cover {
+            transition: all 1.3s;
+            transform: rotateY(-170deg);
+            z-index: 4;
+        }
+        .first_page {
+            transition: all 1.3s;
+            transform: rotateY(-169deg) scale(.95);
+            background: #fff6c3;
+            z-index: 10;
+        }
+        .second_page {
+            transition: all 1.3s;
+            transform: rotateY(-10deg) scale(.95);
+            background: #fff6c3;
+            z-index: 3;
+        }
+        .last_page {
+            transition: all 1.3s;
+            transform: rotateY(-10deg);
+            z-index: 2;
         }
     }
 
@@ -56,13 +97,14 @@
         align-items: center;
         justify-content: center;
         color: #fff;
-        z-index: 5;
+        z-index: 10;
         background: #ffbebe;
-        border-radius: 3px .5rem .5rem 3px;
+        border-radius: 3px .8rem .8rem 3px;
         transform-origin: left center 0; 
         transition: all .5s;
+        border: 1px solid #f5a5a5;
     }
-    .last_page, .first_page {
+    .last_page, .second_page, .first_page {
         position: absolute;
         top: 0;
         left: 0;
@@ -72,9 +114,54 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border-radius: 3px .5rem .5rem 3px;
+        border-radius: 3px .8rem .8rem 3px;
         background: #ffbebe;
         transform-origin: left center 0; 
         transition: all .6s;
+    }
+    .last_page {
+        border: 1px solid #f5a5a5;
+        z-index: 2;
+    }
+    .first_page {
+        border: 1px solid #c9c978;
+    }
+    .second_page {
+        border: 1px solid #c9c978;
+    }
+}
+    
+.BookCreator {
+    position: relative;
+    height: calc(7 * 1.4rem);
+    width: 7rem;
+    border-radius: 3px .8rem .8rem 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 1px solid #ffbebe;
+    color: rgb(97, 97, 97);
+    transition: all .3s;
+    cursor: pointer;
+    @include respond('phone') {
+        height: calc(6.2 * 1.4rem);
+        width: 6.2rem;
+        font-size: 1rem;
+    }
+    @include respond('pad') {
+        height: calc(6.5 * 1.4rem);
+        width: 6.5rem;
+        font-size: 1rem;
+    }
+
+    &:hover {
+        font-size: 1rem;
+        font-weight: 600;
+        border: 1px solid #ffbebe8c;
+        // 内阴影
+        // box-shadow: inset 0 0 .7rem rgba(0,0,0,.1);
     }
 }

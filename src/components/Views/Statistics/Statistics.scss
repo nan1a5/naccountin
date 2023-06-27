@@ -1,0 +1,14 @@
+@import '../../../mixin.scss';
+.Statistics {
+    @include container;
+    @include flex-container-center-start(column);
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    overflow-x: auto;
+    @include respond('phone') {
+        padding: .5rem 1rem;
+    }
+    @include respond('pad') {
+        padding: 1rem 1rem;
+    }
+}
